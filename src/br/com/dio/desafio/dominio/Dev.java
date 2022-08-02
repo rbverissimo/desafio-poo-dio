@@ -30,7 +30,11 @@ public class Dev {
 		} else System.err.println("Você não está matriculado em nenhum conteúdo");
 	};
 	
-	public void calcularTotalXp(){}
+	public double calcularTotalXp(){
+		return this.conteudosConcluidos.stream().
+				mapToDouble(Conteudo::calcularXp)
+				.sum();
+	}
 	
 	
 	public int hashCode() {

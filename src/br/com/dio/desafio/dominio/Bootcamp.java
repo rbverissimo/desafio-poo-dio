@@ -9,10 +9,11 @@ public class Bootcamp {
 	
 	private String nome;
 	private String descricao; 
-	private LocalDate dataInicial = LocalDate.now();
-	private final LocalDate DATA_FINAL = dataInicial.plusDays(45);
+	private final LocalDate DATA_INICIAL = LocalDate.now();
+	private final LocalDate DATA_FINAL = DATA_INICIAL.plusDays(45);
 	private Set<Dev> devsInscritos = new HashSet<>();
 	private Set<Conteudo> conteudos = new LinkedHashSet<>();
+	
 	public String getNome() {
 		return nome;
 	}
@@ -25,12 +26,12 @@ public class Bootcamp {
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
-	public LocalDate getDataInicial() {
+	/* public LocalDate getDataInicial() {
 		return dataInicial;
-	}
-	public void setDataInicial(LocalDate dataInicial) {
+	} */
+	/* public void setDataInicial(LocalDate dataInicial) {
 		this.dataInicial = dataInicial;
-	}
+	} */
 	public Set<Dev> getDevsInscritos() {
 		return devsInscritos;
 	}
@@ -47,13 +48,17 @@ public class Bootcamp {
 		return DATA_FINAL;
 	}
 	
+	public String toString() {
+		return "Bootcamp [nome=" + nome + ", descricao=" + descricao + ", dataInicial=" + DATA_INICIAL + ", DATA_FINAL="
+				+ DATA_FINAL + ", devsInscritos=" + devsInscritos + ", conteudos=" + conteudos + "]";
+	}
 	
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((DATA_FINAL == null) ? 0 : DATA_FINAL.hashCode());
 		result = prime * result + ((conteudos == null) ? 0 : conteudos.hashCode());
-		result = prime * result + ((dataInicial == null) ? 0 : dataInicial.hashCode());
+		result = prime * result + ((DATA_INICIAL == null) ? 0 : DATA_INICIAL.hashCode());
 		result = prime * result + ((descricao == null) ? 0 : descricao.hashCode());
 		result = prime * result + ((devsInscritos == null) ? 0 : devsInscritos.hashCode());
 		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
@@ -78,10 +83,10 @@ public class Bootcamp {
 				return false;
 		} else if (!conteudos.equals(other.conteudos))
 			return false;
-		if (dataInicial == null) {
-			if (other.dataInicial != null)
+		if (DATA_INICIAL == null) {
+			if (other.DATA_INICIAL != null)
 				return false;
-		} else if (!dataInicial.equals(other.dataInicial))
+		} else if (!DATA_INICIAL.equals(other.DATA_INICIAL))
 			return false;
 		if (descricao == null) {
 			if (other.descricao != null)
