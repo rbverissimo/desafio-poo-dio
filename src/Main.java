@@ -1,7 +1,3 @@
-import java.util.HashSet;
-import java.util.LinkedHashSet;
-import java.util.Set;
-
 import br.com.dio.desafio.dominio.Bootcamp;
 import br.com.dio.desafio.dominio.Conteudo;
 import br.com.dio.desafio.dominio.Curso;
@@ -20,25 +16,26 @@ public class Main {
 
 		
 		/* INSTANCIANDO CURSOS E MENTORIAS */
-		Conteudo curso1 = new Curso();
+		Curso curso1 = new Curso();
 		curso1.setTitulo("Programação Orientada a Objetos");
 		curso1.setDescricao("Aprender fundamentos sobre a POO");
+		curso1.setCargaHoraria(10);
 		
-		Conteudo curso2 = new Curso();
+		Curso curso2 = new Curso();
 		curso2.setTitulo("SpringBoot Framework");
 		curso2.setDescricao("Simplifcar projetos Java com Spring Framework");
+		curso2.setCargaHoraria(10);
 		
 		Conteudo mentoria1 = new Mentoria(); 
 		mentoria1.setTitulo("Scrum e Cultura Ágil");
 		
-		Set<Conteudo> conteudosBootcamp1 = new LinkedHashSet<>(); 
-		conteudosBootcamp1.add(curso1);
-		conteudosBootcamp1.add(curso2);
-		conteudosBootcamp1.add(mentoria1); 
-		
+				
 		/* INCLUINDO CONTEUDOS ÀS ESTRUTURAS DE DADOS DO BOOTCAMP */
 		
-		bootcamp1.setConteudos(conteudosBootcamp1);
+		bootcamp1.getConteudos().add(curso1);
+		bootcamp1.getConteudos().add(curso2);
+		bootcamp1.getConteudos().add(mentoria1);
+		
 		
 		
 		/* INSTANCIANDO OS DESENVOLVEDORES QUE FARÃO PARTE DO BOOTCAMP */
@@ -54,11 +51,6 @@ public class Main {
 		dev3.setNome("Roberto");
 		dev3.inscreverBootcamp(bootcamp1);
 		
-		Set<Dev> devsBootcamp1 = new HashSet<>();
-		
-		devsBootcamp1.add(dev1);
-		devsBootcamp1.add(dev2);
-		devsBootcamp1.add(dev3);
 		
 		System.out.println(bootcamp1.toString());
 		

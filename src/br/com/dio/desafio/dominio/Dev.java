@@ -9,7 +9,20 @@ public class Dev {
 	private String nome;
 	private Set<Conteudo> conteudosInscritos = new LinkedHashSet<>();
 	private Set<Conteudo> conteudosConcluidos = new LinkedHashSet<>();
-
+	private double xP = calcularTotalXp(); 
+	
+	public Set<Conteudo> getConteudosInscritos() {
+		return conteudosInscritos;
+	}
+	public void setConteudosInscritos(Set<Conteudo> conteudosInscritos) {
+		this.conteudosInscritos = conteudosInscritos;
+	}
+	public Set<Conteudo> getConteudosConcluidos() {
+		return conteudosConcluidos;
+	}
+	public void setConteudosConcluidos(Set<Conteudo> conteudosConcluidos) {
+		this.conteudosConcluidos = conteudosConcluidos;
+	}
 	public String getNome() {
 		return nome;
 	}
@@ -36,6 +49,11 @@ public class Dev {
 				.sum();
 	}
 	
+	
+	public String toString() {
+		return "Dev [nome=" + nome + ", conteudosInscritos=" + conteudosInscritos + ", conteudosConcluidos="
+				+ conteudosConcluidos + ", xP=" + xP + "]";
+	}
 	
 	public int hashCode() {
 		final int prime = 31;

@@ -48,6 +48,7 @@ public class Bootcamp {
 		return DATA_FINAL;
 	}
 	
+	
 	public String toString() {
 		return "Bootcamp [nome=" + nome + ", descricao=" + descricao + ", dataInicial=" + DATA_INICIAL + ", DATA_FINAL="
 				+ DATA_FINAL + ", devsInscritos=" + devsInscritos + ", conteudos=" + conteudos + "]";
